@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Portfolio</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f0f0f0;
+    }
+
+    header {
+      background: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav a {
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+    }
+
+    section {
+      padding: 40px;
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      margin-top: 20px;
+      border-radius: 8px;
+    }
+
+    .project {
+      background: #f9f9f9;
+      border-left: 4px solid #333;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 10px 15px;
+      background: #333;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #eee;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>My Portfolio</h1>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section id="about">
+  <h2>About Me</h2>
+  <p>Hello! I'm a developer passionate about creating simple and smart web applications using HTML, CSS, and JavaScript.</p>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div id="project-list">
+    <!-- JavaScript will add projects here -->
+  </div>
+  <button onclick="addProject()">Add Project</button>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email: example@mail.com</p>
+  <p>GitHub: <a href="https://github.com" target="_blank">github.com/myprofile</a></p>
+</section>
+
+<footer>
+  &copy; 2025 My Name
+</footer>
+
+<script>
+  const projectData = [
+    { title: "To-Do App", description: "A simple to-do list app using local storage." },
+    { title: "Weather Checker", description: "Fetches real-time weather data." },
+    { title: "Typing Speed Game", description: "A game to test your typing speed." },
+    { title: "Portfolio Website", description: "This very website you're seeing!" }
+  ];
+
+  function addProject() {
+    const random = projectData[Math.floor(Math.random() * projectData.length)];
+    const projectDiv = document.createElement("div");
+    projectDiv.className = "project";
+    projectDiv.innerHTML = `<h3>${random.title}</h3><p>${random.description}</p>`;
+    document.getElementById("project-list").appendChild(projectDiv);
+  }
+</script>
+
+</body>
+</html>
